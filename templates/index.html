@@ -1,5 +1,19 @@
-<!doctype html>
-<title>Flypass</title>
+{% extends "layout.html" %}
+{% block body %}
+<head>
+    <script type=text/javascript src="{{
+      url_for('static', filename='sha256.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='passgen.js') }}"></script>
+</head>
 <body>
-Encrypted
+    <form name="passgen" onSubmit="return passGen()">
+        Secret word: <input type="password" name="sword">
+        Site: <input type="text" name="site">
+        <input type="submit" value="Submit">
+    </form>
+    </br>
+    <div id="generatedpass">
+    </div>
 </body>
+{% endblock %}
