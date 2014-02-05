@@ -6,4 +6,4 @@ sslify = SSLify(app)
 
 @app.route('/')
 def flypass():
-    return render_template('index.html')
+    return 'Encrypted'
