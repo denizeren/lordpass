@@ -5,5 +5,5 @@ app = Flask(__name__)
 sslify = SSLify(app)
 
 @app.route('/')
-def hello():
-    return 'Encrypted'
+def flypass():
+    return render_template('index.html')
