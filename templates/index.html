@@ -1,33 +1,94 @@
 {% extends "layout.html" %}
 {% block body %}
-<head>
     <script type=text/javascript src="{{
-      url_for('static', filename='jquery-2.1.0.min.js') }}"></script>
+      url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
     <script type=text/javascript src="{{
-      url_for('static', filename='baseconv.js') }}"></script>
+      url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script type=text/javascript src="{{
-      url_for('static', filename='sha256.js') }}"></script>
+      url_for('static', filename='js/baseconv.js') }}"></script>
     <script type=text/javascript src="{{
-      url_for('static', filename='passgen.js') }}"></script>
+      url_for('static', filename='js/sha256.js') }}"></script>
     <script type=text/javascript src="{{
-      url_for('static', filename='sitestuff.js') }}"></script>
-</head>
-<body>
-    <form name="passgen">
-        Secret word: <input type="password" id="sword" autocomplete="off">
-        Site: <input type="text" id="site" autocomplete="off">
-        Version: <input type="text" id="version" value="1" autocomplete="off"></br>
+      url_for('static', filename='js/passgen.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/sitestuff.js') }}"></script>
 
-        <div id="advancedOptions" style="display:none">
-        Username: <input type="text" id="username" autocomplete="off">
-        Pass Length: <input type="text" id="sizepass" value="15" autocomplete="off">
-        Alphabet: <input type="text" id="alphabet" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" autocomplete="off"></br>
-        </div>
-    </form>
-    <button id="generate">Generate Password</button>
-    <button id="advanced">Advanced</button>
-    </br> </br>
-    <div id="generatedpass">
-    </div>
-</body>
+  <div class="jumbotron">
+      <div class="container">
+          <h1>One Password to Rule Them All!</h1>
+          <p>Remember only one password and generate all others.</p>
+          <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>-->
+      </div>
+  </div>
+  <div class="container">
+      <form name="passgen">
+          <div id="standardOptions">
+              <div class="row">
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Secret word</button>
+                          </span>
+                          <input type="password" class="form-control" id="sword" autocomplete="off">
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Site</button>
+                          </span>
+                          <input type="text" class="form-control" id="site" autocomplete="off">
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Version</button>
+                          </span>
+                          <input type="text" class="form-control" id="version" value="1" autocomplete="off">
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </br>
+
+          <div id="advancedOptions" style="display:none">
+              <div class="row">
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Username</button>
+                          </span>
+                          <input type="text" class="form-control" id="username" autocomplete="off">
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Length</button>
+                          </span>
+                          <input type="text" class="form-control" id="sizepass" value="15" autocomplete="off">
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="input-group">
+                          <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled>Alphabet</button>
+                          </span>
+                          <input type="text" id="alphabet" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" autocomplete="off">
+                      </div>
+                  </div>
+          </div>
+          </br>
+      </div>
+      </form>
+      <button id="generate" type="button" class="btn btn-lg btn-success">Generate Password</button>
+      <button id="advanced" type="button" class="btn btn-lg btn-info">Advanced</button>
+      </br> </br>
+      <input type="text" class="form-control" id="generatedpass" autocomplete="off" style="opacity:0">
+      <div class="alert alert-success" id="passalert" style="display:none">
+          Press <strong>Ctrl+C</strong> to copy generated password.
+      </div>
+  </div>
+
 {% endblock %}

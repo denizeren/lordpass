@@ -9,7 +9,10 @@ function passGen() {
 
     var generatedPass = convert(Sha256.hash($('#sword').val() + $('#site').val() + passVer + $('#username').val()), alphabet).substring(0,sizePass);
 
-    $('#generatedpass').html(generatedPass);
+    $('#generatedpass').val(generatedPass);
+    $('#passalert').show();
+    $('#generatedpass').focus();
+    $('#generatedpass').select();
 
     return false;
 }

@@ -1,3 +1,7 @@
+$(function() {
+    $("#sword").focus();
+});
+
 $(document).ready(function(){
     $('#generate').click(function(){
         return passGen();
