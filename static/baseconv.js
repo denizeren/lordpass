@@ -8,10 +8,10 @@ function getValueOfDigit(digit, alphabet)
    return pos;
 }
 
-function convert(src)
+function convert(src, alphabet)
 {
    var srcAlphabet = "0123456789abcdef";
-   var dstAlphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   var dstAlphabet = alphabet;
    var srcBase = srcAlphabet.length;
    var dstBase = dstAlphabet.length;
 

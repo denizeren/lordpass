@@ -2,21 +2,31 @@
 {% block body %}
 <head>
     <script type=text/javascript src="{{
+      url_for('static', filename='jquery-2.1.0.min.js') }}"></script>
+    <script type=text/javascript src="{{
       url_for('static', filename='baseconv.js') }}"></script>
     <script type=text/javascript src="{{
       url_for('static', filename='sha256.js') }}"></script>
     <script type=text/javascript src="{{
       url_for('static', filename='passgen.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='sitestuff.js') }}"></script>
 </head>
 <body>
-    <form name="passgen" onSubmit="return passGen()">
-        Secret word: <input type="password" name="sword">
-        Site: <input type="text" name="site">
-        Pass Length: <input type="text" name="sizepass">
-        Version: <input type="text" name="version"></br>
-        <input type="submit" value="Submit">
+    <form name="passgen">
+        Secret word: <input type="password" id="sword" autocomplete="off">
+        Site: <input type="text" id="site" autocomplete="off">
+        Version: <input type="text" id="version" value="1" autocomplete="off"></br>
+
+        <div id="advancedOptions" style="display:none">
+        Username: <input type="text" id="username" autocomplete="off">
+        Pass Length: <input type="text" id="sizepass" value="15" autocomplete="off">
+        Alphabet: <input type="text" id="alphabet" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" autocomplete="off"></br>
+        </div>
     </form>
-    </br>
+    <button id="generate">Generate Password</button>
+    <button id="advanced">Advanced</button>
+    </br> </br>
     <div id="generatedpass">
     </div>
 </body>
