@@ -85,9 +85,14 @@
       <button id="generate" type="button" class="btn btn-lg btn-success">Generate Password</button>
       <button id="advanced" type="button" class="btn btn-lg btn-info">Advanced</button>
       </br> </br>
-      <input type="text" class="form-control" id="generatedpass" autocomplete="off" style="opacity:0">
       <div class="alert alert-success" id="passalert" style="display:none">
-          Press <strong>Ctrl+C</strong> to copy generated password.
+          <p class="flip" id="showpass">Press <strong>Ctrl+C</strong> to copy generated password or click here to show it.</button>
+      </div>
+      <div class="input-group" id="gengroup" style="opacity:0">
+          <span class="input-group-btn">
+              <button class="btn btn-default" type="button" disabled>Generated Password</button>
+          </span>
+          <input type="text" class="form-control" id="generatedpass" autocomplete="off">
       </div>
   </div>
 

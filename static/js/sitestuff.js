@@ -19,3 +19,9 @@ $(document).ready(function(){
         $('#advancedOptions').toggle();
     });
 });
+
+$(document).ready(function(){
+    $(".flip").click(function(){
+        $('#gengroup').css({opacity:1});
+    });
+});
