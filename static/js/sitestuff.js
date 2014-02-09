@@ -22,6 +22,11 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".flip").click(function(){
-        $('#gengroup').css({opacity:1});
+        if($('#gengroup').css("opacity") == 0) {
+            $('#gengroup').css({opacity:1});
+        }
+        else {
+            $('#gengroup').css({opacity:0});
+        }
     });
 });
