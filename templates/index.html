@@ -17,7 +17,7 @@
       <div class="container">
           <h1>One Password to Rule Them All!</h1>
           <p>Remember only one password and generate all others.</p>
-          <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>-->
+          <p><a class="btn btn-primary btn-lg" role="button" href="/howitworks">Learn more &raquo;</a></p>
       </div>
   </div>
   <div class="container">
@@ -78,22 +78,22 @@
                           <input type="text" id="alphabet" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" autocomplete="off">
                       </div>
                   </div>
+              </div>
+              </br>
           </div>
-          </br>
-      </div>
       </form>
       <button id="generate" type="button" class="btn btn-lg btn-success">Generate Password</button>
       <button id="advanced" type="button" class="btn btn-lg btn-info">Advanced</button>
       </br> </br>
       <div class="alert alert-success" id="passalert" style="display:none">
           <p class="flip" id="showpass">Press <strong>Ctrl+C</strong> to copy generated password or click here to show it.</button>
-      </div>
-      <div class="input-group" id="gengroup" style="opacity:0">
-          <span class="input-group-btn">
-              <button class="btn btn-default" type="button" disabled>Generated Password</button>
-          </span>
-          <input type="text" class="form-control" id="generatedpass" autocomplete="off">
-      </div>
+  </div>
+  <div class="input-group" id="gengroup" style="opacity:0">
+      <span class="input-group-btn">
+          <button class="btn btn-default" type="button" disabled>Generated Password</button>
+      </span>
+      <input type="text" class="form-control" id="generatedpass" autocomplete="off">
+  </div>
   </div>
 
-{% endblock %}
+  {% endblock %}

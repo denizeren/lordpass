@@ -8,5 +8,10 @@ sslify = SSLify(app)
 def flypass():
     return render_template('index.html')
 
+@app.route('/howitworks')
+def how():
+    return render_template('how.html')
+
+
 if __name__ == '__main__':
     app.run()
