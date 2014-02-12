@@ -1,17 +1,17 @@
 from flask import Flask, render_template
-from flask_sslify import SSLify
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
-sslify = SSLify(app)
 
 @app.route('/')
-def flypass():
+def lordpass():
     return render_template('index.html')
 
 @app.route('/howitworks')
 def how():
     return render_template('how.html')
 
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 if __name__ == '__main__':
     app.run()
