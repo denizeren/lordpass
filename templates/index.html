@@ -1,6 +1,22 @@
 {% extends "layout.html" %}
 {% block body %}
     <script type=text/javascript src="{{
+      url_for('static', filename='js/sha512.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/MochiKit/MochiKit.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/Clipperz/Base.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/Clipperz/ByteArray.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/Clipperz/Crypto/BigInt.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/Clipperz/Crypto/SHA.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/Clipperz/Crypto/AES.js') }}"></script>
+    <script type=text/javascript src="{{
+      url_for('static', filename='js/bCrypt.js') }}"></script>
+    <script type=text/javascript src="{{
       url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
     <script type=text/javascript src="{{
       url_for('static', filename='js/bootstrap.min.js') }}"></script>
