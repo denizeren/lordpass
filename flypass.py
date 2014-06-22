@@ -1,7 +1,11 @@
 from flask import Flask, render_template
 from werkzeug.contrib.fixers import ProxyFix
-
+from flask_sslify import SSLify
+ 
 app = Flask(__name__)
+
+# SSL forcing for heroku
+sslify = SSLify(app)
 
 @app.route('/')
 def lordpass():

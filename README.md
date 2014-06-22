@@ -3,4 +3,4 @@ lordpass
 
 Clientside password generator
 
-Site: lordpass.me
+Site: flypass.herokuapp.com
